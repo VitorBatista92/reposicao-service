@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     container_name: reposicao-service
     ports:
-      - "8083:8083"
+      - "8085:8085"
     environment:
       DB_HOST: postgres
       DB_PORT: 5432

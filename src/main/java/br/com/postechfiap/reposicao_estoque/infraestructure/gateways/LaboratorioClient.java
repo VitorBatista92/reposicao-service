@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
         configuration = LaboratorioFornecedorFeignClientConfig.class
 )
 public interface LaboratorioClient {
-    @GetMapping("/buscar/{id}")
+    @GetMapping("fornecedores/buscar/{id}")
     LaboratorioResponse buscarFornecedorPorId(@PathVariable("id") Long id);
 }

@@ -19,12 +19,26 @@ spring:
     user:
       name: teste
       password: 123456
-
+  kafka:
+    consumer:
+      group-id: reposicao-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+            value:
+              default:
+                type: br.com.postechfiap.reposicao_estoque.infraestructure.listener.dto.EstoqueAlertaDTO
+    bootstrap-servers: kafka:9092
 
 client:
   fornecedor-service:
     name: fornecedor-service-client
-    url: ${FORNECEDOR_SERVICE_HOST:http://localhost:8080}/fornecedores
+    url: ${FORNECEDOR_SERVICE_HOST:http://localhost:8080}/api/fornecedor
     api-key: RXN0YSDDqSBhIGFwaS1rZXkgZG8gZm9ybmVjZWRvci1zZXJ2aWNl
 
 server:
