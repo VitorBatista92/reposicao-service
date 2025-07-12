@@ -23,7 +23,7 @@ public class UpdatePedidoUseCaseImpl  implements UpdateReposicaoUseCase {
         final var pedidoAtualizado =  PedidoEntity.builder()
                 .id(reposicao.id())
                 .sku(reposicao.sku())
-                .laboratorio(reposicao.laboratorio())
+                .laboratorioId(reposicao.laboratorioId())
                 .status(reposicao.status())
                 .build();
 

@@ -9,6 +9,6 @@ public record CreatePedidoDto (
         @NotBlank(message = "O status é obrigatório.")
         String status,
 
-        @NotBlank(message = "O laboratorio é obrigatório.")
+        @NotBlank(message = "O laboratorioId é obrigatório.")
         String laboratorio
 ){}

@@ -58,7 +58,7 @@ public class PedidoController {
                                                           @Valid @RequestBody AtualizaPedidoRequest atualizaPedidoRequest) {
         var pedido = updateReposicaoUseCase.execute(new AtualizaPedidoRequest(  atualizaPedidoRequest.id(),
                                                                                 atualizaPedidoRequest.sku(),
-                                                                                atualizaPedidoRequest.laboratorio(),
+                                                                                atualizaPedidoRequest.laboratorioId(),
                                                                                 atualizaPedidoRequest.status()));
 
         return ResponseEntity.ok(pedido);

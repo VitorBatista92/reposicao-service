@@ -30,9 +30,9 @@ public class PedidoEntity extends BaseEntity<Long>{
     private String status;
 
     @Setter
-    @NotBlank(message = "O laboratorio do pedido é obrigatorio")
+    @NotBlank(message = "O laboratorioId do pedido é obrigatorio")
     @Column(nullable = false)
-    private String laboratorio;
+    private Long laboratorioId;
 
 
 }
