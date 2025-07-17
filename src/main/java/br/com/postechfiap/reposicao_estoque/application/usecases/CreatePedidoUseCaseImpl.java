@@ -1,7 +1,7 @@
 package br.com.postechfiap.reposicao_estoque.application.usecases;
 
 import br.com.postechfiap.reposicao_estoque.application.gateways.PedidoGateway;
-import br.com.postechfiap.reposicao_estoque.application.interfaces.CreatePedidoUseCase;
+import br.com.postechfiap.reposicao_estoque.application.interfaces.usecases.CreatePedidoUseCase;
 import br.com.postechfiap.reposicao_estoque.infraestructure.controller.adapter.PedidoResponseAdapter;
 import br.com.postechfiap.reposicao_estoque.infraestructure.dto.PedidoResponse;
 import br.com.postechfiap.reposicao_estoque.infraestructure.dto.laboratorio.LaboratorioResponse;

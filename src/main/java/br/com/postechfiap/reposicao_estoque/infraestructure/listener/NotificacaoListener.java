@@ -2,7 +2,7 @@ package br.com.postechfiap.reposicao_estoque.infraestructure.listener;
 
 //import br.com.postechfiap.reposicao_estoque.application.interfaces.EnviarNotificacaoUseCase;
 //import br.com.postechfiap.reposicao_estoque.application.usecases.dto.EnviarNotificacaoContext;
-import br.com.postechfiap.reposicao_estoque.application.interfaces.CreatePedidoUseCase;
+import br.com.postechfiap.reposicao_estoque.application.interfaces.usecases.CreatePedidoUseCase;
 import br.com.postechfiap.reposicao_estoque.infraestructure.dto.requests.PedidoRequest;
 import br.com.postechfiap.reposicao_estoque.infraestructure.listener.dto.EstoqueAlertaDTO;
 import lombok.RequiredArgsConstructor;

@@ -33,13 +33,18 @@ spring:
             value:
               default:
                 type: br.com.postechfiap.reposicao_estoque.infraestructure.listener.dto.EstoqueAlertaDTO
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
 client:
   fornecedor-service:
     name: fornecedor-service-client
-    url: ${FORNECEDOR_SERVICE_HOST:http://localhost:8080}/api/fornecedor
+    url: ${FORNECEDOR_SERVICE_HOST:http://localhost:8080}/fornecedor
     api-key: RXN0YSDDqSBhIGFwaS1rZXkgZG8gZm9ybmVjZWRvci1zZXJ2aWNl
+
+  medicamento-service:
+    name: medicamento-service-client
+    url: ${MEDICAMENTO_SERVICE_HOST:http://localhost:8082}/estoque
+    api-key: l
 
 server:
   port: 8085
