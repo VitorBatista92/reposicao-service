@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @KafkaListener(
         topics = "medicamento-fim-topic",
-        groupId = "pedido-service",
+        groupId = "reposicao-service",
         id = "string-listener-test"
 )
 public class NotificacaoListener {

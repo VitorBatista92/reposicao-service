@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
         configuration = LaboratorioFornecedorFeignClientConfig.class
 )
 public interface MedicamentoClient {
-    @PutMapping("adicionar")
+    @PutMapping("/estoque/adicionar")
     LaboratorioResponse adicionarPorSku(AlterarEstoqueRequest request);
 }
