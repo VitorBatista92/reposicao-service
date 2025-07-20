@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,12 +31,14 @@ public class PedidoController {
     private final NotificaReposicaoUseCase notificaReposicaoUseCase;
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR')")
     @Operation(summary = "Criar Pedido", description = "Cria o pedido de reposicao")
     public ResponseEntity criarPedido(@RequestBody PedidoRequest reposicao) {
         return new ResponseEntity<>(createPedidoUseCase.execute(reposicao), HttpStatus.CREATED);
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR')")
     @Operation(summary = "Buscar Medicamento", description = "Buscar medicamento por id ou sku")
     public ResponseEntity<List<PedidoResponse>> buscarMedicamento(@RequestParam(required = false) Long id,
                                                                   @RequestParam(required = false) String sku
@@ -52,6 +55,7 @@ public class PedidoController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR')")
     @Operation(summary = "Atualiza pedido de medicamento", description = "Atualizar pedido de medicamento por id")
     public ResponseEntity<PedidoResponse> atualizarPedido(@PathVariable Long id,
                                                           @Valid @RequestBody AtualizaPedidoRequest atualizaPedidoRequest) {
@@ -64,6 +68,7 @@ public class PedidoController {
     }
 
     @PutMapping("/notifica")
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR')")
     @Operation(summary = "Notifica a reposicao do pedido de medicamento", description = "Notica a reposicao de medicamento por sku")
     public ResponseEntity<PedidoResponse> noticaReposicao(@Valid @RequestBody NotificaReposicaoRequest notificaReposicaoRequest) {
         var pedido = notificaReposicaoUseCase.execute(new NotificaReposicaoRequest(   notificaReposicaoRequest.sku(),
@@ -74,6 +79,7 @@ public class PedidoController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR')")
     @Operation(summary = "Apaga o pedido de medicamento", description = "Apaga pedido de medicamento por id")
     public ResponseEntity<String> deletarPedido(@PathVariable Long id) {
         var response = deletePedidoUseCase.execute(id);
