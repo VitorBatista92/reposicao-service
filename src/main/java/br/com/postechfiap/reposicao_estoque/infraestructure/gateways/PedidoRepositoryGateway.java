@@ -16,7 +16,7 @@ public class PedidoRepositoryGateway implements PedidoGateway {
     private final PedidoRepository pedidoRepository;
     @Override
     public Optional<PedidoEntity> findBySku(String sku) {
-        return pedidoRepository.findBySku(sku);
+        return pedidoRepository.findBySkuAndStatus(sku, "aberto");
     }
 
     @Override

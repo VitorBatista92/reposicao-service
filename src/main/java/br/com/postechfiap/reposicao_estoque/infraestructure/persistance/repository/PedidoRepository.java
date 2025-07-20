@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PedidoRepository extends JpaRepository<PedidoEntity, Long> {
-    Optional<PedidoEntity> findBySku(String sku);
+    Optional<PedidoEntity> findBySkuAndStatus(String sku, String status);
 
 
     @Query("SELECT m FROM PedidoEntity m " +
